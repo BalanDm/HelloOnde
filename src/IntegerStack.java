@@ -32,6 +32,9 @@ public class IntegerStack implements IStack<Integer> {
             return last.getValue() == null ? last.getKey() : last.getValue();
         } finally {
             data.remove(data.size() - 1);
+            if (data.size() == 0) {
+                min = null;
+            }
         }
     }
 
